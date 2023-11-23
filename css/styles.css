@@ -1,0 +1,181 @@
+/* imported google web fonts: 'Bebas Neue','Joan','Kdam Thmor Pro','League Gothic','Shadows Into Light','Raleway','Roboto Slab' */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Joan&family=Kdam+Thmor+Pro&family=League+Gothic&family=Raleway&family=Roboto+Slab&family=Shadows+Into+Light&display=swap');
+
+body {
+    font-family: 'Bebas Neue','Joan','Kdam Thmor Pro','League Gothic','Shadows Into Light','Raleway','Roboto Slab',sans-serif;
+    background-color: white;
+    color: #5c5c5c;
+}
+
+/* create the main grid */
+.grid {
+    display: grid; 
+    grid-template-columns: .5fr 5fr .5fr; /* 3 columns */
+    grid-template-rows: auto auto; /* 2 rows */
+}
+
+/* header styles */
+header {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin: 10px 10px 10px 20px;
+    padding: 10px 10px 10px 20px;
+    font-family: "Raleway";
+
+    & .main-heading {
+        font-size: 2rem;
+    }
+
+    & .sub-heading-1, .sub-heading-2{
+        color: #a3b3bd;
+        font-size: 1rem;
+        justify-self: left;        
+    }
+}
+
+/* qoutes-container syles, I also use this as a grid */
+.qoutes-container {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: 
+        "douglas robert james"
+        "jeff jeff james"
+        "dijkstra dijkstra dijkstra"
+        "rick bill bill";
+}
+
+/* styling for each qoutes and authors */
+.qoute:nth-of-type(1) {
+    grid-area: douglas;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Bebas Neue";
+    font-size: 1.7rem;
+    text-align: left;
+    & .author {
+        font-size: 1.2rem;
+    }
+}
+
+.qoute:nth-of-type(2) {
+    grid-area: robert;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Joan";
+    font-size: 1.3rem;
+    text-align: left;
+    & .author {
+        font-size: 1rem;
+    }
+}
+
+.qoute:nth-of-type(3) {
+    grid-area: james;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Kdam Thmor Pro";
+    font-size: 1.6rem;
+    text-align: right;
+    & .author {
+        font-size: 1.2rem;
+    }
+}
+
+.qoute:nth-of-type(4) {
+    grid-area: jeff;
+    margin: 10px;
+    padding: 10px;
+    font-family: "League Gothic";
+    font-size: 1.1rem;
+    text-align: left;
+    & .author {
+        font-size: .9rem;
+    }
+}
+
+.qoute:nth-of-type(5) {
+    grid-area: dijkstra;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Shadows Into Light";
+    font-size: 1.6rem;
+    text-align: left;
+    & .author {
+        font-size: 1.3rem;
+    }
+}
+
+.qoute:nth-of-type(6) {
+    grid-area: rick;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Raleway";
+    font-size: 1.2rem;
+    text-align: left;
+    & .author {
+        font-size: 1rem;
+    }
+}
+
+.qoute:nth-of-type(7) {
+    grid-area: bill;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Roboto Slab";
+    font-size: 1.6rem;
+    text-align: right;
+    & .author {
+        font-size: 1.3rem;
+    }
+}
+
+/* styling for all icons */
+.fa-solid {
+    color: #a3b3bd;
+    font-size: 1.2rem;
+}
+
+/* 800px or less breakpoint */
+@media screen and (max-width: 800px){
+    .grid {
+        grid-template-columns: auto auto auto; 
+    }
+    
+    .qoutes-container {
+        grid-template-areas: 
+            "douglas robert"
+            "james james"
+            "jeff dijkstra"
+            "rick bill";
+    }
+
+    .qoute:nth-of-type(3){
+        text-align: left;
+    }
+
+    .qoute:nth-of-type(7) {
+        text-align: left;
+    }
+}
+
+/* 600px or less breakpoint */
+@media screen and (max-width: 600px){
+    .grid {
+        grid-template-columns: auto auto auto; 
+    }
+    
+    .qoutes-container {
+        grid-template-areas: 
+            "douglas"
+            "robert"
+            "james"
+            "jeff" 
+            "dijkstra"
+            "rick" 
+            "bill";
+    }
+
+}
